@@ -1,0 +1,95 @@
+
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fdfcfb;
+    color: #3e2f1c;
+    margin: 0;
+    padding: 2rem;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #603813;
+  }
+  span.badge {
+    font-size: 0.9rem;
+  }
+  
+  form {
+    max-width: 1000px;
+    margin: auto;
+    background-color: #fff6ee;
+    border: 1px solid #ccc;
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  
+  .section.datos-generales {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    width: 30%;
+  }
+  
+  table.ficha {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+  
+  table.ficha th, table.ficha td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  table.ficha input[type="range"] {
+    width: 100%;
+  }
+  
+  table.ficha input[type="text"],
+  table.ficha input[type="number"],
+  textarea {
+    width: 100%;
+    padding: 0.3rem;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+  }
+  
+  .puntuacion {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  .puntuacion label {
+    font-weight: bold;
+    flex: 1;
+  }
+  
+  button {
+    background-color: #8B4513;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 2rem auto 0;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background-color: #A0522D;
+  }
+  
