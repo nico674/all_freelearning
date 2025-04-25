@@ -7,6 +7,13 @@
     margin: 0;
     padding: 2rem;
   }
+  .imagen-esquina {
+    position: absolute;       /* Posiciona la imagen con coordenadas */
+    top: 10px;                /* Distancia desde arriba */
+    right: 10px;              /* Distancia desde la derecha */
+    width: 100px;             /* Tamaño de la imagen */
+    z-index: 1000;            /* Asegura que esté encima de otros elementos */
+  }
   
   h1, h2 {
     text-align: center;
