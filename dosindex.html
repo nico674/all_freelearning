@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CoEx Evaluation Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light text-dark">
+  <div class="container py-4">
+    <h1 class="text-center mb-4">CoEx Evaluation Form – Feb 2024</h1>
+
+    <form>
+
+      <!-- Producer Info -->
+      <div class="card mb-4 p-3">
+        <h5>Producer Information</h5>
+        <div class="row">
+          <div class="col-md-6 mb-3"><label class="form-label">Producer Name</label><input name="producer_name" class="form-control" required></div>
+          <div class="col-md-6 mb-3"><label class="form-label">Contact Email</label><input type="email" name="producer_email" class="form-control"></div>
+          <div class="col-md-4 mb-3"><label class="form-label">Farm Location</label><input name="farm_location" class="form-control"></div>
+          <div class="col-md-4 mb-3"><label class="form-label">Country</label><input name="country" class="form-control"></div>
+          <div class="col-md-4 mb-3"><label class="form-label">GPS Coordinates</label><input name="gps" class="form-control"></div>
+        </div>
+      </div>
+
+      <!-- Sample Info -->
+      <div class="card mb-4 p-3">
+        <h5>Sample Information</h5>
+        <div class="row">
+          <div class="col-md-3 mb-3"><label class="form-label">Sample Weight (g)</label><input type="number" name="sample_weight" class="form-control"></div>
+          <div class="col-md-3 mb-3"><label class="form-label">Genetic Origin</label><input name="genetic_origin" class="form-control"></div>
+          <div class="col-md-3 mb-3"><label class="form-label">Fermentation Days</label><input type="number" name="fermentation_days" class="form-control"></div>
+          <div class="col-md-3 mb-3"><label class="form-label">Drying Days</label><input type="number" name="drying_days" class="form-control"></div>
+        </div>
+      </div>
+
+      <!-- Physical Evaluation -->
+      <div class="card mb-4 p-3">
+        <h5>Physical Quality</h5>
+        <div class="row">
+          <div class="col-md-4 mb-3"><label class="form-label">Moisture (%)</label><input type="number" step="0.1" name="moisture" class="form-control"></div>
+          <div class="col-md-4 mb-3"><label class="form-label">Bean Count (/100 g)</label><input type="number" name="bean_count" class="form-control"></div>
+          <div class="col-md-4 mb-3"><label class="form-label">Nibs Yield (%)</label><input type="number" step="0.1" name="nibs_yield" class="form-control"></div>
+        </div>
+      </div>
+
+      <!-- Sensory Attributes -->
+      <div class="card mb-4 p-3">
+        <h5>Cacao Mass / Chocolate Sensory</h5>
+
+        <!-- Example attribute row -->
+        <div class="row align-items-center mb-3">
+          <div class="col-md-4">Acidity (0–10)</div>
+          <div class="col-md-4"><input type="range" min="0" max="10" name="acidity" class="form-range"><span class="badge bg-secondary">0</span></div>
+          <div class="col-md-4"><input type="number" min="0" max="10" name="acidity_val" class="form-control"></div>
+        </div>
+
+        <!-- Repite la fila anterior para cada atributo: bitterness, astringency, fresh fruit, browned fruit, vegetal, floral, woody, spice, nutty, caramel/panela, sweetness, roast degree, off‑flavours, global quality -->
+      </div>
+
+      <!-- Comments -->
+      <div class="mb-4">
+        <label class="form-label">Comments</label>
+        <textarea name="comments" class="form-control" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit Evaluation</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+-se va usar django solo con los formularios.
+-c# se va usar para Un experto en alto rendimiento, 
+aplicaciones empresariales robustas, servicios de 
+Windows y sistemas que requieren un tipado estricto.
