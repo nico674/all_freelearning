@@ -1,0 +1,55 @@
+#para instalar docker hay que preparar linux
+#con lo siguiente:
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+para ver si docker se instalo correctamente 
+
+docker --version
+
+para instalar lo adicional a docker engine.
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+para arracar el daemon de docker 
+sudo systemctl start docker
+sudo systemctl enable docker 
+sudo systemctl status docker
+
+ejemplo de como se tiene que ver:
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; preset: enabled)
+     Active: active (running) since Mon 2025-03-31 00:20:03 -05; 24min ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 41248 (dockerd)
+      Tasks: 12
+     Memory: 37.2M (peak: 52.4M)
+        CPU: 5.786s
+     CGroup: /system.slice/docker.service
+             └─41248 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Mar 31 00:20:03 nictrolas-VirtualBox dockerd[41248]: time="2025-03-31T00:20:03.250437814-05:00" level=warning msg="error locating sandbox id 386ff311436368020fc8512656ee4b97fad91388c72fe15b211fc2584b3d5d9c: sandbox 386ff311436368020fc8512656ee4b97fad91388c72fe15b211fc2584b3d5d9c not found"
+Mar 31 00:20:03 nictrolas-VirtualBox dockerd[41248]: time="2025-03-31T00:20:03.251234911-05:00" level=info msg="Loading containers: done."
+Mar 31 00:20:03 nictrolas-VirtualBox dockerd[41248]: time="2025-03-31T00:20:03.365266492-05:00" level=info msg="Docker daemon" commit=6430e49 containerd-snapshotter=false storage-driver=overlay2 version=28.0.4
+Mar 31 00:20:03 nictrolas-VirtualBox dockerd[41248]: time="2025-03-31T00:20:03.365652622-05:00" level=info msg="Initializing buildkit"
+Mar 31 00:20:03 nictrolas-VirtualBox dockerd[41248]: time="2025-03-31T00:20:03.429400176-05:00" level=info msg="Completed buildkit initialization"
+Mar 31 00:20:03 nictrolas-VirtualBox dockerd[41248]: time="2025-03-31T00:20:03.444583654-05:00" level=info msg="Daemon has completed initialization"
+Mar 31 00:20:03 nictrolas-VirtualBox dockerd[41248]: time="2025-03-31T00:20:03.444961627-05:00" level=info msg="API listen on /run/docker.sock"
+Mar 31 00:20:03 nictrolas-VirtualBox systemd[1]: Started docker.service - Docker Application Container Engine.
+Mar 31 00:32:34 nictrolas-VirtualBox dockerd[41248]: time="2025-03-31T00:32:34.376152790-05:00" level=error msg="copy stream failed" error="reading from a closed fifo" stream=stdout
+Mar 31 00:32:34 nictrolas-VirtualBox dockerd[41248]: time="2025-03-31T00:32:34.389672467-05:00" level=error msg="Error running exec 627b6745b1b2426f540c6c8c6937e4e23fdce57c90c02ab8707aea487a95100f in container: OCI runtime exec failed: exec failed: unable to start container process: exec: \"bash\": executable file not found in $PATH: unknown"
+
+
+
+

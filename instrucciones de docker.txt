@@ -1,0 +1,4 @@
+#instrucciones de docker y su uso
+docker image ls -> lista las imagenes creadas en docker
+
+systemctl status docker ->es el daemon de docker donde verifica si docker esta funcionando.
